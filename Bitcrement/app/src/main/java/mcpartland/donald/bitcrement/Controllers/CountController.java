@@ -9,7 +9,14 @@ public class CountController
 
     public int Count(String currentCount)
     {
-        count = Integer.parseInt(currentCount);
+        try
+        {
+            count = Integer.parseInt(currentCount);
+        }
+        catch (NumberFormatException e)
+        {
+            return 0;
+        }
 
         return ++count;
     }
