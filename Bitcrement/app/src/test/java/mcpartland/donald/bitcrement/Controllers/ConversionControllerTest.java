@@ -9,8 +9,6 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by Donald on 1/10/16.
  */
@@ -27,13 +25,23 @@ public class ConversionControllerTest
     }
 
     @Test
-    public void Convert_ValidParameter_ReturnsSelfAsBinary()
+    public void ConvertIntToString_ValidParameter_ReturnsSelfAsBinary()
     {
         ConversionController conversionController = CreateConversionController();
 
-        String output = conversionController.Convert(input);
+        String output = conversionController.ConvertIntToString(input);
 
         Assert.assertEquals(expected, output);
+    }
+
+    @Test
+    public void ConvertStringToInt_ValidParameter_ReturnsSelfAsInt()
+    {
+        ConversionController conversionController = CreateConversionController();
+
+        int output = conversionController.ConvertStringToInt(expected);
+
+        Assert.assertEquals(input, output);
     }
 
     @Parameterized.Parameters

@@ -18,20 +18,8 @@ public class CountControllerTest
     @Test
     public void Count_ValidParameter_ParameterPlusOne()
     {
-        String input = "1234";
+        int input = 1234;
         int expected = 1235;
-
-        CountController testController = CreateTestCountController();
-
-        int output = testController.Count(input);
-        Assert.assertEquals(output, expected);
-    }
-
-    @Test
-    public void Count_InvalidParameter_Zero()
-    {
-        String input = "test";
-        int expected = 0;
 
         CountController testController = CreateTestCountController();
 

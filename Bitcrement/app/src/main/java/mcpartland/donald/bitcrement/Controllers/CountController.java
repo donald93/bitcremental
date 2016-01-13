@@ -7,17 +7,8 @@ public class CountController
 {
     private int count;
 
-    public int Count(String currentCount)
+    public int Count(int currentCount)
     {
-        try
-        {
-            count = Integer.parseInt(currentCount);
-        }
-        catch (NumberFormatException e)
-        {
-            return 0;
-        }
-
-        return ++count;
+        return ++currentCount;
     }
 }

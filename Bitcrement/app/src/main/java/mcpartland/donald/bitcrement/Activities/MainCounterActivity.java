@@ -43,9 +43,10 @@ public class MainCounterActivity extends RoboActivity
     {
         String currentCount = (String) mainCounterText.getText();
 
-        int newCount = countController.Count(currentCount);
+        int oldCount = conversionController.ConvertStringToInt(currentCount);
+        int newCount = countController.Count(oldCount);
 
-        String newCountText = conversionController.Convert(newCount);
+        String newCountText = conversionController.ConvertIntToString(newCount);
 
         mainCounterText.setText(newCountText);
     }
